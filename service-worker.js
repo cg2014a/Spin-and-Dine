@@ -1,4 +1,4 @@
-const CACHE_NAME = 'spin-dine-v1-005';
+const CACHE_NAME = 'spin-dine-v1-006';
 const APP_SHELL = ['./', './index.html', './style.css', './wheel.css', './app.js', './manifest.webmanifest', './icons/spin-dine-icon.svg'];
 
 self.addEventListener('install', (event) => {

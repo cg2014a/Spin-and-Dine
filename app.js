@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const VERSION = 'v1-004';
+  const VERSION = 'v1-005';
   const DB_NAME = 'spin-dine';
   const STORE = 'app';
   const palette = ['#ff4f71', '#714bff', '#12c8b3', '#ff9d2e', '#ec4db8', '#279dff', '#7ed33b', '#ff6842', '#5266ee', '#cc44b3'];
@@ -371,6 +371,6 @@
   function celebrate(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const layer=document.createElement('div');layer.className='confetti';for(let i=0;i<42;i++){const bit=document.createElement('i');bit.style.left=`${Math.random()*100}%`;bit.style.background=palette[i%palette.length];bit.style.setProperty('--x',`${(Math.random()-.5)*230}px`);bit.style.animationDelay=`${Math.random()*.22}s`;layer.append(bit);}document.body.append(layer);setTimeout(()=>layer.remove(),1900);}
   function setScreen(screen){app.screen=screen;app.winner=null;render();window.scrollTo({top:0,behavior:'instant'});}
   function initEvents(){ $$('.nav-item').forEach(btn=>btn.addEventListener('click',()=>setScreen(btn.dataset.screen)));window.addEventListener('resize',()=>{if(app.screen==='tonight')requestAnimationFrame(drawWheel);}); }
-  async function init(){ try{app.state=await loadState();initEvents();render();if('serviceWorker'in navigator)navigator.serviceWorker.register('./service-worker.js').catch(()=>{});}catch(err){console.error(err);$('#screen').innerHTML='<section class="card empty"><h2>Unable to start Spin &amp; Dine</h2><p>This browser needs local storage enabled to save your family data.</p></section>';}}
+  async function init(){ try{app.state=await loadState();initEvents();render();if('serviceWorker'in navigator){navigator.serviceWorker.addEventListener('controllerchange',()=>window.location.reload(),{once:true});navigator.serviceWorker.register('./service-worker.js').then(registration=>registration.update()).catch(()=>{});}}catch(err){console.error(err);$('#screen').innerHTML='<section class="card empty"><h2>Unable to start Spin &amp; Dine</h2><p>This browser needs local storage enabled to save your family data.</p></section>';}}
   init();
 })();

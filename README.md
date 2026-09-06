@@ -15,4 +15,4 @@ Open http://localhost:5500 in Chrome. To test the PWA offline behavior, load it 
 
 Settings contains JSON backup and restore. Restore validates the backup before it replaces local data.
 
-Version: v1-004
+Version: v1-005

@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const VERSION = 'v1-006';
+  const VERSION = 'v1-007';
   const DB_NAME = 'spin-dine';
   const STORE = 'app';
   const palette = ['#ff4f71', '#714bff', '#12c8b3', '#ff9d2e', '#ec4db8', '#279dff', '#7ed33b', '#ff6842', '#5266ee', '#cc44b3'];

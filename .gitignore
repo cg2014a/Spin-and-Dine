@@ -1,0 +1,8 @@
+node_modules/
+.env
+.DS_Store
+Thumbs.db
+*.log
+
+# Local screenshots and temporary test artifacts
+wheel-mobile-check.png

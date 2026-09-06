@@ -1,0 +1,13 @@
+{
+  "name": "Spin & Dine",
+  "short_name": "Spin & Dine",
+  "description": "A private family dinner choice game.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#071329",
+  "theme_color": "#071329",
+  "icons": [
+    { "src": "icons/spin-dine-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

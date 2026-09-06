@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const VERSION = 'v1-001';
+  const VERSION = 'v1-002';
   const DB_NAME = 'spin-dine';
   const STORE = 'app';
   const palette = ['#ff4f71', '#714bff', '#12c8b3', '#ff9d2e', '#ec4db8', '#279dff', '#7ed33b', '#ff6842', '#5266ee', '#cc44b3'];
@@ -93,8 +93,8 @@
     return `<div class="title-row"><div><div class="eyebrow">${eyebrow}</div><h1>${title}</h1></div>${action}</div>${subtitle ? `<p class="subtitle">${subtitle}</p>` : ''}`;
   }
   function onboarding() {
-    const peopleReady = app.state.people.length > 0, choicesReady = allChoices().length >= 2;
-    return `<section class="card empty"><div class="emoji">🍽️</div><h2>Your first dinner decision awaits</h2><p>Add your family and favorite places. Every saved choice is its own equal position.</p><div class="progress-list"><div>${peopleReady ? '✓' : '1.'} Add family members</div><div>${choicesReady ? '✓' : '2.'} Add at least two choices</div><div>3. Return here and spin</div></div><button class="button primary" id="onboard-action">${peopleReady ? 'Add a place' : 'Add a person'}</button></section>`;
+    const peopleReady = app.state.people.length > 0, choicesReady = allChoices().length >= 3;
+    return `<section class="card empty"><div class="emoji">🍽️</div><h2>Your first dinner decision awaits</h2><p>Add your family and favorite places. Every saved choice is its own equal position.</p><div class="progress-list"><div>${peopleReady ? '✓' : '1.'} Add family members</div><div>${choicesReady ? '✓' : '2.'} Add at least three choices</div><div>3. Return here and spin</div></div><button class="button primary" id="onboard-action">${peopleReady ? 'Add a place' : 'Add a person'}</button></section>`;
   }
   function tonightView() {
     const eligible = eligibleChoices(); const totalEnabled = enabledChoices().length;
